@@ -32,6 +32,7 @@ A release version, based on a master branch which should be fully validated, sho
 More details here: [releasing and versioning](https://py-pkgs.org/07-releasing-versioning.html)
 In the current project we only keep the patch and minor numbering.
 
+
 ### Python coding conventions
 [PEP8](https://peps.python.org/pep-0008/)
 
