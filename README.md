@@ -28,8 +28,8 @@ Navigate to the location of the project<br/>
 ### Release Versioning
 Any new changes to master branch have to be validated(reviewed and tested) on the develop branch before being accepted.
 
-A release version, based on a master branch which should be fully validated, should be called ``testzli-v*-YYYYMMDD``. 
-
+A release version, based on a master branch which should be fully validated, should be called ``testzli-v*.*.*``. <br/>
+More details here: [releasing and versioning](https://py-pkgs.org/07-releasing-versioning.html)
 
 ### Python coding conventions
 [PEP8](https://peps.python.org/pep-0008/)
