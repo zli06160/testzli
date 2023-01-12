@@ -9,6 +9,15 @@ class MyTestCase(unittest.TestCase):
     They should cover all types of inputs params, and be checked with manually calculated reference results like belows.
     """
 
+    def test_positive_params(self):
+        calculator = UniswapV2PriceCalculator()
+        self.assertRaises(ValueError, calculator.calculate_price, 0, 1, 1)
+        self.assertRaises(ValueError, calculator.calculate_price, -1, 0, 1)
+        self.assertRaises(ValueError, calculator.calculate_price, 100, 0, 1)
+        self.assertRaises(ValueError, calculator.calculate_price, 25, -1, 99)
+        self.assertRaises(ValueError, calculator.calculate_price, 100, 100, 0)
+        self.assertRaises(ValueError, calculator.calculate_price, 100, 100, -99)
+
     def test_fee_rate(self):
         self.assertEqual(0.003, V2FEES)
 

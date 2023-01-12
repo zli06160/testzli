@@ -9,6 +9,10 @@ class UniswapV2PriceCalculator:
     The implementation of UniSwap V2 price calculation. It takes consideration of the pair fee rate(currently 0.30%).
     """
     def __init__(self, v2fees: float = V2FEES, price_limit: float = PRICE_LIMIt):
+        """
+        :param v2fees: pair fee rate
+        :param price_limit: modifiable price limit
+        """
         self.v2fees = v2fees
         self.price_limit = price_limit
 
@@ -22,5 +26,7 @@ class UniswapV2PriceCalculator:
         :param nb_target_token: number of the target(counterparty) token in the pool
         :return: the price of the target(counterparty) token
         """
+        if nb_base_token <= 0 or price_base_token <= 0 or nb_target_token <= 0:
+            raise ValueError("All parameters should be positive")
         price_target_token = (nb_base_token * price_base_token) / nb_target_token
         return price_target_token if price_target_token < self.price_limit else 0
